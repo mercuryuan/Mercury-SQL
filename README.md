@@ -10,6 +10,8 @@
 
 ## 环境配置
 
+### 安装python3.10
+
 ### torch, torchvision, torchaudio安装
 
 以适配cuda为12.1为例
