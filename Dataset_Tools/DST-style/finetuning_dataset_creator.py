@@ -10,7 +10,10 @@ from transformers import AutoTokenizer
 from sql_metadata import Parser
 
 BASE_DATABASES_DIR = "../../Datasets/spider/database"
+### huggf的模型名或者本地路径
 MODEL_NAME = "meta-llama/Llama-3.2-1B"
+# MODEL_NAME = "meta-llama/Llama-3.2-3B"
+
 CONTEXT_WINDOW = 3000
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
