@@ -5,12 +5,12 @@ set -e
 PROJECT_ROOT=$(pwd)
 
 # 创建 generate_schema 目录
-#if [ ! -d "$PROJECT_ROOT/generate_schema" ]; then
-#  mkdir "$PROJECT_ROOT/generate_schema"
-#  echo "create directory generate_schema"
-#else
-#  echo "directory generate_schema already exists"
-#fi
+if [ ! -d "$PROJECT_ROOT/Data/C3-data/" ]; then
+  mkdir "$PROJECT_ROOT/Data/C3-data/"
+  echo "create directory Data/C3-data"
+else
+  echo "directory Data/C3-data already exists"
+fi
 
 # preprocess schema
 echo "preprocessing ..."
