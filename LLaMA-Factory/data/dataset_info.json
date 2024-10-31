@@ -1,4 +1,10 @@
 {
+  "C3_train_1_hop": {
+    "file_name": "../../Training_Dataset/C3/train.json"
+  },
+  "C3_dev_1_hop": {
+    "file_name": "../../Training_Dataset/C3/dev.json"
+  },
   "identity": {
     "file_name": "identity.json"
   },
