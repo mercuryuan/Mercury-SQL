@@ -1,6 +1,5 @@
 /Datasets/spider/
 /desktop.ini
-/Models/meta-llama/
 /Models/desktop.ini
 /.idea/sshConfigs.xml
 /.idea/webServers.xml
@@ -9,3 +8,4 @@
 /cache/ds_z3_config.json
 /cache/ds_z3_offload_config.json
 /cache/user_config.yaml
+/Models/
