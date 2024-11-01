@@ -40,7 +40,6 @@ jieba==0.42.1
 Jinja2==3.1.3
 joblib==1.4.2
 kiwisolver==1.4.7
--e git+https://github.com/mercuryuan/Mercury-SQL.git@918519151fe46b1fb615e2dd91ac9159c51874fe#egg=llamafactory&subdirectory=llama-factory
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
 matplotlib==3.9.2

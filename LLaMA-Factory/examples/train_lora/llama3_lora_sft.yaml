@@ -4,7 +4,7 @@ model_name_or_path: meta-llama/Meta-Llama-3-8B-Instruct
 ### method
 stage: sft
 do_train: true
-finetuning_type: lora
+finetuning_type: loraz
 lora_target: all
 
 ### dataset
