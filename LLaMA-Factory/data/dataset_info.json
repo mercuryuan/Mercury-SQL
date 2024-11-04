@@ -18,7 +18,7 @@
     "file_name": "../../Training_Dataset/DTS/dts_sql_generation_DDLform.json"
   },
   "DTS_eval_1of2_hop": {
-    "file_name": "../../Training_Dataset/DTS/???"
+    "file_name": "../../Training_Dataset/DTS/eval_schema_linking_dataset.json"
   },
   "DTS_eval_2of2_hop": {
     "file_name": "../../Training_Dataset/DTS/???"

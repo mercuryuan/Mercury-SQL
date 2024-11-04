@@ -1,11 +1,11 @@
 import pandas as pd
 import json
 import re
+from config import BASE_DIR
 
 # 读取CSV文件
-csv_path = "output_datasets/validation/spider_dataset_formatted.csv"  # 请替换为实际的CSV文件路径
+csv_path = f"{BASE_DIR}/Data/DTS-data/validation/spider_dataset_formatted.csv"  # 请替换为实际的CSV文件路径
 data = pd.read_csv(csv_path)
-
 
 # 存储生成的JSON数据
 output_data = []
@@ -35,9 +35,8 @@ for index, row in data.iterrows():
     output_data.append(entry)
 
 # 将结果保存为JSON文件
-json_path = "eval_inference_schema_linking_dataset.json"  # 输出文件路径
+json_path = f"{BASE_DIR}/Training_Dataset/DTS/eval_schema_linking_dataset.json"  # 输出文件路径
 with open(json_path, "w", encoding="utf-8") as f:
     json.dump(output_data, f, ensure_ascii=False, indent=4)
 
 print(f"JSON数据集已保存至 {json_path}")
-
