@@ -9,3 +9,12 @@
 /cache/ds_z3_offload_config.json
 /cache/user_config.yaml
 /Models/
+/src/llamafactory/
+/.idea/.gitignore
+/.idea/deployment.xml
+/.idea/Mercury-SQL.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
