@@ -1,9 +1,9 @@
 {
   "C3_orig_train_1_hop": {
-    "file_name": "../../Training_Dataset/C3第一版/my_ft_dataset.json"
+    "file_name": "../../Training_Dataset/C3_orig/my_ft_dataset.json"
   },
   "C3_orig_eval_1_hop": {
-    "file_name": "../../Training_Dataset/C3第一版/my_eval_dataset.json"
+    "file_name": "../../Training_Dataset/C3_orig/my_eval_dataset.json"
   },
   "C3_train_1_hop": {
     "file_name": "../../Training_Dataset/C3/train.json"
