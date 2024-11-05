@@ -1,0 +1,37 @@
+### model
+model_name_or_path: /home/models/Llama-3.2-3B
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_target: all
+
+### dataset
+dataset: C3_orig_train_1_hop  #需更改的参数，数据集
+template: llama3     #修改后的llama3模版
+cutoff_len: 1024
+max_samples: 10000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: ../Models/llama3B/tp_llama3/C3_orig_train_1_hop_lr_7 # 需更改的参数
+logging_steps: 10
+save_steps: 100
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 8
+learning_rate: 7.0e-5   # 提高了学习率
+num_train_epochs: 5.0
+lr_scheduler_type: cosine
+ddp_timeout: 180000000
+
+### eval
+val_size: 0.1
+per_device_eval_batch_size: 4
+eval_strategy: steps
+eval_steps: 100
