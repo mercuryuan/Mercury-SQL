@@ -34,7 +34,7 @@ log_files=(
 )
 
 # 定义每个命令使用的 GPU
-gpu_assignments=(0 0 1 2 2)  # 例如，第一个和第二个任务使用 GPU 0，第三个任务使用 GPU 1，第四和第五个任务使用 GPU 2
+gpu_assignments=(0 0 0 1 1)  # 例如，第一个和第二个任务使用 GPU 0，第三个任务使用 GPU 1，第四和第五个任务使用 GPU 2
 
 # 循环启动每个训练任务
 for i in "${!commands[@]}"; do
