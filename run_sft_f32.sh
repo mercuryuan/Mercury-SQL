@@ -26,23 +26,39 @@ commands=(
 
 # 对应的日志文件名称
 log_files=(
-    "C3_orig_train_1_hop_lr_5.txt"
+    "C3_orig_train_1_hop_lr_5.log"
     "C3_orig_train_1_hop_lr_55.log"
-    "C3_train_1_hop.txt"
-    "DTS_train_1of2_hop.txt"
-    "DTS_train_2of2_hop.txt"
+    "C3_train_1_hop.log"
+    "DTS_train_1of2_hop.log"
+    "DTS_train_2of2_hop.log"
 )
 
-# 定义每个命令使用的 GPU
-gpu_assignments=(0 0 0 1 1)  # 例如，第一个和第二个任务使用 GPU 0，第三个任务使用 GPU 1，第四和第五个任务使用 GPU 2
+# 定义可用的 GPU
+gpu_count=2  # 可用 GPU 数量
+gpu_assignments=(0 1)  # GPU 0 和 GPU 1
+
+# 创建一个空数组来保存当前正在执行的任务的 PID
+declare -a running_jobs
 
 # 循环启动每个训练任务
 for i in "${!commands[@]}"; do
     # 获取对应的日志文件路径
-    log_file="Results/$current_date/$MODEL_NAME/${log_files[$i]}"
+    log_file="../Results/$current_date/log_$MODEL_NAME/${log_files[$i]}"
+
+    # 选择当前可用的 GPU
+    gpu_id=${gpu_assignments[$((i % gpu_count))]}  # 循环使用 GPU 0 和 GPU 1
+
+    # 如果这个 GPU 上已经有任务在执行，则等待它完成
+    while [[ "${running_jobs[$gpu_id]}" ]]; do
+        wait "${running_jobs[$gpu_id]}"
+        unset running_jobs[$gpu_id]
+    done
 
     # 使用 tee 命令同时输出到终端和日志文件
-    CUDA_VISIBLE_DEVICES=${gpu_assignments[$i]} eval "${commands[$i]} 2>&1 | tee $log_file" &  # 指定 GPU
+    CUDA_VISIBLE_DEVICES=$gpu_id eval "${commands[$i]} 2>&1 | tee $log_file" &
+
+    # 将当前任务的进程 ID 记录到数组中
+    running_jobs[$gpu_id]=$!
 done
 
 # 等待所有后台任务完成
