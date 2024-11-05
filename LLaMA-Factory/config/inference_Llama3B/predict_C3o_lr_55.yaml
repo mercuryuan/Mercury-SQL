@@ -1,0 +1,28 @@
+### model
+model_name_or_path: /home/models/Llama-3.2-3B
+adapter_name_or_path: /home/wma/Mercury-SQL/Models/llama3B/C3_orig_train_1_hop_lr_55                                   # 选择最佳的checkpoint
+
+
+### method
+stage: sft
+do_predict: true
+finetuning_type: lora
+
+### dataset
+eval_dataset: C3_orig_eval_1_hop                                              # 批量推理数据集
+template: llama3
+cutoff_len: 1024
+max_samples: 2000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+flash_attn: auto                          # 自动选择attention
+max_new_tokens: 100                           # 输出长度尽量短
+output_dir: ../Results/prediction/C3_orig_eval_1_hop_lr_55                                               # 输出目录
+overwrite_output_dir: true
+
+### eval
+per_device_eval_batch_size: 8
+predict_with_generate: true
+ddp_timeout: 180000000
