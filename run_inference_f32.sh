@@ -17,7 +17,9 @@ fi
 # 定义训练命令和对应的日志文件名称
 commands=(
     "llamafactory-cli train config/inference_Llama3B/predict_C3o.yaml"
-    "llamafactory-cli train config/inference_Llama3B/predict_C3o_lr_55.yaml"
+#    "llamafactory-cli train config/inference_Llama3B/predict_C3o_lr_55.yaml"
+#    "llamafactory-cli train config/inference_Llama3B/llama3.yaml"
+#    "llamafactory-cli train config/inference_Llama3B/default.yaml"
 )
 
 
