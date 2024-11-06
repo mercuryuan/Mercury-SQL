@@ -25,7 +25,7 @@ def extract_sql_queries(input_filename, output_filename):
         with open(output_filename, 'w', encoding='UTF-8') as output_file:
             for query in queries:
                 # 将每个查询语句写入文件，并在每个查询后添加一个分号和换行符
-                output_file.write(query + ';\n')
+                output_file.write(query + '\n')
 
         print(f"SQL queries 已保存至 {output_filename}")
 

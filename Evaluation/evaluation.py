@@ -711,7 +711,7 @@ def evaluate(gold, predict, db_dir, etype, kmaps, plug_value, keep_distinct, pro
     time_str = now.strftime("%Y-%m-%d-%H-%M-%S")
     # 自添加的函数,将结果输出到Excel中保存
     export_scores_to_excel(scores, etype, include_turn_acc=include_turn_acc,
-                           file_name=f"result/evaluation_results-{time_str}.xlsx")
+                           file_name=f"Results/{os.path.basename(os.path.dirname(os.path.abspath(predict)))}.xlsx")
 
 
 # Rebuild SQL functions for value evaluation
