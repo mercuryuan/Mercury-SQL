@@ -12,13 +12,7 @@ if [ ! -d "Results/$current_date/$MODEL_NAME" ]; then
     mkdir -p "Results/$current_date/$MODEL_NAME"
     echo "文件夹 'Results/$current_date/$MODEL_NAME' 已创建。"
 fi
-# 该脚本会启动多个训练任务，每个任务都会输出到对应的日志文件中
-# 创建日志文件路径
-log_dir="../Results/tp_llama3_$current_date/log_$MODEL_NAME"
-if [ ! -d "$log_dir" ]; then
-    mkdir -p "$log_dir"
-    echo "日志文件夹 '$log_dir' 已创建。"
-fi
+
 
 # 定义训练命令和对应的日志文件名称
 commands=(
@@ -30,8 +24,8 @@ commands=(
 
 
 # 定义可用的 GPU
-gpu_count=2  # 可用 GPU 数量
-gpu_assignments=(0 1)  # GPU 0 和 GPU 1
+gpu_count=4  # 可用 GPU 数量
+gpu_assignments=(0 1 2 3)  # GPU 0 和 GPU 1
 
 # 创建一个空数组来保存当前正在执行的任务的 PID
 declare -a running_jobs
