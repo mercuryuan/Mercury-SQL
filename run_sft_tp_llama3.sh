@@ -14,7 +14,7 @@ if [ ! -d "Results/$current_date/$MODEL_NAME" ]; then
 fi
 # 该脚本会启动多个训练任务，每个任务都会输出到对应的日志文件中
 # 创建日志文件路径
-log_dir="../Results/tp_default_$current_date/log_$MODEL_NAME"
+log_dir="../Results/tp_llama3_$current_date/log_$MODEL_NAME"
 if [ ! -d "$log_dir" ]; then
     mkdir -p "$log_dir"
     echo "日志文件夹 '$log_dir' 已创建。"

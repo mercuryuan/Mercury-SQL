@@ -4,7 +4,7 @@ model_name_or_path: /home/models/Llama-3.2-3B
 ### 手动配置区
 template: default # 重要！模板
 adapter_name_or_path: /home/wma/Mercury-SQL/Models/llama3B/tp_llama3/DTS_train_1of2_hop/checkpoint-1200
-output_dir: ../Results/prediction/tp_llama/DTS-sl
+output_dir: ../Results/prediction/tp_default/DTS-sl
 eval_dataset: DTS_eval_1of2_hop
 
 # 统一参数区
