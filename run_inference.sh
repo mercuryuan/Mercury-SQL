@@ -18,13 +18,15 @@ commands=(
     "llamafactory-cli train config/inference_Llama3B/tp_default/predict_C3o_lr_7.yaml"
     "llamafactory-cli train config/inference_Llama3B/tp_default/predict_C3.yaml"
     "llamafactory-cli train config/inference_Llama3B/tp_default/predict_DTS_schema.yaml"
-    "llamafactory-cli train config/inference_Llama3B/tp_default/predict_DTS_sql_generate.yaml"
+# 得到一阶段输出再进行推理
+#    "llamafactory-cli train config/inference_Llama3B/tp_default/predict_DTS_sql_generate.yaml"
 #
     "llamafactory-cli train config/inference_Llama3B/tp_llama3/predict_C3o.yaml"
     "llamafactory-cli train config/inference_Llama3B/tp_llama3/predict_C3o_lr_7.yaml"
     "llamafactory-cli train config/inference_Llama3B/tp_llama3/predict_C3.yaml"
     "llamafactory-cli train config/inference_Llama3B/tp_llama3/predict_DTS_schema.yaml"
-    "llamafactory-cli train config/inference_Llama3B/tp_llama3/predict_DTS_sql_generate.yaml"
+# 得到一阶段输出再进行推理
+#    "llamafactory-cli train config/inference_Llama3B/tp_llama3/predict_DTS_sql_generate.yaml"
 )
 
 
