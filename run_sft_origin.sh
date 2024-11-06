@@ -11,27 +11,23 @@ current_date=$(date +%F)
 if [ ! -d "Results/$current_date/$MODEL_NAME" ]; then
     mkdir -p "Results/$current_date/$MODEL_NAME"
     echo "文件夹 'Results/$current_date/$MODEL_NAME' 已创建。"
-else
-    echo "文件夹 'Results/$current_date/$MODEL_NAME' 已存在。"
+fi
+# 该脚本会启动多个训练任务，每个任务都会输出到对应的日志文件中
+# 创建日志文件路径
+log_dir="../Results/tp_llama3_$current_date/log_$MODEL_NAME"
+if [ ! -d "$log_dir" ]; then
+    mkdir -p "$log_dir"
+    echo "日志文件夹 '$log_dir' 已创建。"
 fi
 
 # 定义训练命令和对应的日志文件名称
 commands=(
-    "llamafactory-cli train config/sft_Llama3B/f32/C3_orig_train_1_hop_lr_5.yaml"
-    "llamafactory-cli train config/sft_Llama3B/f32/C3_orig_train_1_hop_lr_55.yaml"
-    "llamafactory-cli train config/sft_Llama3B/f32/C3_train_1_hop.yaml"
-    "llamafactory-cli train config/sft_Llama3B/f32/DTS_train_1of2_hop.yaml"
-    "llamafactory-cli train config/sft_Llama3B/f32/DTS_train_2of2_hop.yaml"
+    "llamafactory-cli train config/sft_original/lr_5-vs_008.yaml"
+    "llamafactory-cli train config/sft_original/lr_5-vs_010.yaml"
+    "llamafactory-cli train config/sft_original/lr_7-vs_008.yaml"
+    "llamafactory-cli train config/sft_original/lr_14-vs_008.yaml"
 )
 
-# 对应的日志文件名称
-log_files=(
-    "C3_orig_train_1_hop_lr_5.log"
-    "C3_orig_train_1_hop_lr_55.log"
-    "C3_train_1_hop.log"
-    "DTS_train_1of2_hop.log"
-    "DTS_train_2of2_hop.log"
-)
 
 # 定义可用的 GPU
 gpu_count=2  # 可用 GPU 数量
@@ -43,7 +39,7 @@ declare -a running_jobs
 # 循环启动每个训练任务
 for i in "${!commands[@]}"; do
     # 获取对应的日志文件路径
-    log_file="../Results/$current_date/log_$MODEL_NAME/${log_files[$i]}"
+    log_file="$log_dir/${log_files[$i]}"
 
     # 选择当前可用的 GPU
     gpu_id=${gpu_assignments[$((i % gpu_count))]}  # 循环使用 GPU 0 和 GPU 1
@@ -55,7 +51,7 @@ for i in "${!commands[@]}"; do
     done
 
     # 使用 tee 命令同时输出到终端和日志文件
-    CUDA_VISIBLE_DEVICES=$gpu_id eval "${commands[$i]} 2>&1 | tee $log_file" &
+    CUDA_VISIBLE_DEVICES=$gpu_id eval "${commands[$i]}" &
 
     # 将当前任务的进程 ID 记录到数组中
     running_jobs[$gpu_id]=$!
