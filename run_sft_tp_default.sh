@@ -44,7 +44,7 @@ declare -a running_jobs
 # 循环启动每个训练任务
 for i in "${!commands[@]}"; do
     # 获取对应的日志文件路径
-    log_file="../Results/tp_llama3_$current_date/log_$MODEL_NAME/${log_files[$i]}"
+    log_file="Results/tp_default_$current_date/log_$MODEL_NAME/${log_files[$i]}"
 
     # 选择当前可用的 GPU
     gpu_id=${gpu_assignments[$((i % gpu_count))]}  # 循环使用 GPU 0 和 GPU 1

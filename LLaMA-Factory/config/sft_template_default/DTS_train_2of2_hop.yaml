@@ -16,7 +16,7 @@ overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: ../Models/llama3B/tp_llama3/DTS_train_2of2_hop # 需更改的参数
+output_dir: ../Models/llama3B/tp_default/DTS_train_2of2_hop # 需更改的参数
 logging_steps: 10
 save_steps: 100
 plot_loss: true
