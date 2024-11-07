@@ -48,7 +48,7 @@ def process_all_subfolders(base_dir):
 
             # 如果文件存在，执行提取SQL查询的操作
             if os.path.isfile(input_file):
-                print(f"处理模型预测文件: {input_file}")
+                # print(f"处理模型预测文件: {input_file}")
                 extract_sql_queries(input_file, output_file)
 
 
