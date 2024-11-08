@@ -1,6 +1,7 @@
 import os
 import json
 import argparse
+import sys
 
 
 def extract_sql_queries(input_filename, output_filename):
@@ -16,7 +17,10 @@ def extract_sql_queries(input_filename, output_filename):
             for line in file:
                 # 将JSON字符串解析为Python字典
                 data = json.loads(line)
-
+                # 另外添加，如果prompt中包含'###full_database_schema'，则结束程序
+                if '###full_database_schema' in data['prompt']:
+                    print("跳过一阶段文件")
+                    return
                 # 提取predict字段并添加到列表中
                 if 'predict' in data:
                     queries.append(data['predict'])

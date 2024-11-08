@@ -1,6 +1,7 @@
 import os
 import json
 import argparse
+import sys
 
 
 def extract_and_combine(input_filename, output_filename):
@@ -16,18 +17,21 @@ def extract_and_combine(input_filename, output_filename):
             for line in file:
                 # 将 JSON 字符串解析为 Python 字典
                 data = json.loads(line)
-
-                # 提取 question 和 predict 字段并进行格式化
+                # 另外添加，如果prompt中包含'###filtered schema:'，则退出程序
+                if '###filtered schema:' in data['prompt']:
+                    print("跳过二阶段文件")
+                    return
+                    # 提取 question 和 predict 字段并进行格式化
                 if 'question' in data['prompt'] and 'predict' in data:
                     # 提取 question 内容
                     question_part = data['prompt'].split('###question: ')[1].split(',###')[0].strip()
 
                     # 提取 schema 内容
-                    schema_part = data['prompt'].split('###full_database_schema: ')[1].split(', assistant')[0].strip()
+                    schema_part = data['predict']
 
                     # 构造目标格式的 JSON 记录
                     record = {
-                        "instruction": "Generate an SQL query based on the question and filtered schema. The output should be a single SQL statement.",
+                        "instruction": "Generate an SQL query based on the given filtered database schema and its samplings.",
                         "input": f"###question: {question_part}, ###filtered schema: {schema_part}",
                         "output": ""
                     }

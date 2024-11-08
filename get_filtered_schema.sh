@@ -1,5 +1,5 @@
 # 该脚本实现将输入dir中的子文件夹中的generated_predictions.jsonl
-# 写入原目录下的predict.txt中
+# 写入原目录下的filtered_schema.json中
 
 # 已运行过的命令
 
