@@ -21,6 +21,6 @@
     "file_name": "../../Training_Dataset/DTS/eval_schema_linking_dataset.json"
   },
   "DTS_eval_2of2_hop": {
-    "file_name": "../../Training_Dataset/DTS/???"
+    "file_name": "../../Results/prediction/2_stage/DTS/sl/filtered_schema.json"
   }
 }
