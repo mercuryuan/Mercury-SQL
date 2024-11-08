@@ -15,16 +15,14 @@ fi
 
 # 定义训练命令和对应的日志文件名称
 commands=(
-    "llamafactory-cli train config/inference_Llama3B/tp_llama3/predict_C3o.yaml"
-    "llamafactory-cli train config/inference_Llama3B/tp_llama3/predict_C3o_lr_7.yaml"
-    "llamafactory-cli train config/inference_Llama3B/tp_llama3/predict_C3.yaml"
-    "llamafactory-cli train config/inference_Llama3B/tp_llama3/predict_DTS_schema.yaml"
+    "llamafactory-cli train config/inference_2_stage/DTS/sl.yaml"
+
 )
 
 
 # 定义可用的 GPU
-gpu_count=4  # 可用 GPU 数量
-gpu_assignments=(0 1 2 3)  # GPU 0 和 GPU 1
+gpu_count=2  # 可用 GPU 数量
+gpu_assignments=(0 1)  # GPU 0 和 GPU 1
 
 # 创建一个空数组来保存当前正在执行的任务的 PID
 declare -a running_jobs
