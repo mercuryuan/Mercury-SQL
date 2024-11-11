@@ -15,7 +15,9 @@ fi
 
 # 定义训练命令和对应的日志文件名称
 commands=(
-    "llamafactory-cli train config/inference_2_stage/DTS/sg.yaml"
+    "llamafactory-cli train config/inference_Llama8B/DTS/sg.yaml"
+#    "llamafactory-cli train config/inference_Llama8B/DTS/sl.yaml"
+#    "llamafactory-cli train config/inference_2_stage/DTS/sg.yaml"
 #    "llamafactory-cli train config/inference_2_stage/DTS/sl.yaml"
 )
 

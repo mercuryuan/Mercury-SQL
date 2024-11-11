@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #                                               !!!!  设置要处理的母文件夹路径  !!!!!
-prediction_path=Results/prediction/2_stage/DTS
+prediction_path=Results/prediction/2_stage/DTS-8B
+#prediction_path=Results/prediction/2_stage/DTS
 
 # 运行生成 SQL 查询的脚本并捕获输出
 output=$(python Results/process_predictions.py $prediction_path)

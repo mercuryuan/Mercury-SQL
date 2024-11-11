@@ -16,7 +16,9 @@ fi
 
 # 定义训练命令和对应的日志文件名称
 commands=(
-    "llamafactory-cli train config/sft_2_stage/DTS/sl.yaml"
+    "llamafactory-cli train config/llama8B/sft_2_stage/DTS/sg.yaml"
+    "llamafactory-cli train config/llama8B/sft_2_stage/DTS/sl.yaml"
+#    "llamafactory-cli train config/sft_2_stage/DTS/sl.yaml"
 #    "llamafactory-cli train config/sft_2_stage/DTS/sg.yaml"
 #    "llamafactory-cli train config/sft_original/lr_5-vs_008.yaml"
 #    "llamafactory-cli train config/sft_original/lr_5-vs_010.yaml"

@@ -3,8 +3,8 @@ model_name_or_path: /home/models/llama3-8b
 
 ### 手动配置区
 template: llama3 # 重要！模板
-adapter_name_or_path: /home/wma/Mercury-SQL/Models/llama3B/2_stage/DTS/sl/checkpoint-2300
-output_dir: ../Results/prediction/2_stage/DTS/sl
+adapter_name_or_path: /home/wma/Mercury-SQL/Models/llama8B/2_stage/DTS/sl/checkpoint-1600
+output_dir: ../Results/prediction/2_stage/DTS-8B/sl
 eval_dataset: DTS_eval_1of2_hop
 
 # 统一参数区

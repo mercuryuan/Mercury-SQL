@@ -3,4 +3,5 @@
 
 # 已运行过的命令
 
-python Results/process_filtered_schema.py Results/prediction/2_stage/DTS
+#python Results/process_filtered_schema.py Results/prediction/2_stage/DTS
+python Results/process_filtered_schema.py Results/prediction/2_stage/DTS-8B

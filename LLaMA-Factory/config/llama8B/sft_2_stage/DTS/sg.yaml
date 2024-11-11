@@ -1,0 +1,41 @@
+# 手动配置
+model_name_or_path: /home/models/llama3-8b
+dataset: DTS_train_2of2_hop
+output_dir: ../Models/llama8B/2_stage/DTS/sg
+
+# 可选参数
+learning_rate: 1.0e-04
+per_device_eval_batch_size: 2
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 8
+eval_steps: 100
+logging_steps: 10
+save_steps: 100
+val_size: 0.08
+template: llama3
+
+# 统一参数
+bf16: true
+cutoff_len: 1536 # 数据库模式容易超过
+dataset_dir: data
+ddp_timeout: 180000000
+do_train: true
+eval_strategy: steps
+finetuning_type: lora
+flash_attn: auto
+include_num_input_tokens_seen: true
+lora_alpha: 16
+lora_dropout: 0
+lora_rank: 8
+lora_target: all
+lr_scheduler_type: cosine
+max_grad_norm: 1.0
+max_samples: 100000
+num_train_epochs: 5.0
+optim: adamw_torch
+packing: false
+plot_loss: true
+preprocessing_num_workers: 16
+report_to: none
+stage: sft
+warmup_steps: 0

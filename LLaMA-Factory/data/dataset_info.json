@@ -22,5 +22,8 @@
   },
   "DTS_eval_2of2_hop": {
     "file_name": "../../Results/prediction/2_stage/DTS/sl/filtered_schema.json"
+  },
+  "DTS_eval_2of2_hop-Llama8B": {
+    "file_name": "../../Results/prediction/2_stage/DTS-8B/sl/filtered_schema.json"
   }
 }
