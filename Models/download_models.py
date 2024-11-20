@@ -21,8 +21,10 @@ def load_and_save_model(model_name, save_path):
 
 if __name__ == "__main__":
     # 可选，模型仓库名或者本地路径
-    MODEL_NAME = 'meta-llama/Llama-3.2-1B'
-    SAVE_PATH = f'./{MODEL_NAME}'
+    MODEL_NAME = 'internlm/internlm2_5-7b-chat'
+    # MODEL_NAME = 'meta-llama/Llama-3.2-1B'
+    SAVE_PATH = f'/home/models/internlm2_5-7b-chat'
+    # SAVE_PATH = f'./{MODEL_NAME}'
 
     # 调用函数，加载并保存模型
     load_and_save_model(MODEL_NAME, SAVE_PATH)
