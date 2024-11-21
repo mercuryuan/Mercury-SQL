@@ -1,4 +1,3 @@
 model_name_or_path: /home/models/llama3-8b
-adapter_name_or_path: /home/wma/Mercury-SQL/Models/llama8B/2_stage/DTS/sl/checkpoint-1600
+#adapter_name_or_path: /home/wma/Mercury-SQL/Models/llama8B/2_stage/DTS/sl/checkpoint-1600
 template: llama3
-finetuning_type: lora
