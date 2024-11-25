@@ -1,4 +1,34 @@
 {
+  "SPIDER_20%": {
+    "file_name": "../../Training_Dataset/Divided/SPIDER_train_20%.json"
+  },
+  "SPIDER_40%": {
+    "file_name": "../../Training_Dataset/Divided/SPIDER_train_40%.json"
+  },
+  "SPIDER_60%": {
+    "file_name": "../../Training_Dataset/Divided/SPIDER_train_60%.json"
+  },
+  "SPIDER_80%": {
+    "file_name": "../../Training_Dataset/Divided/SPIDER_train_80%.json"
+  },
+  "SPIDER_100%": {
+    "file_name": "../../Training_Dataset/Divided/SPIDER_train_100%.json"
+  },
+  "BIRD_20%": {
+    "file_name": "../../Training_Dataset/Divided/BIRD_train_20%.json"
+  },
+  "BIRD_40%": {
+    "file_name": "../../Training_Dataset/Divided/BIRD_train_40%.json"
+  },
+  "BIRD_60%": {
+    "file_name": "../../Training_Dataset/Divided/BIRD_train_60%.json"
+  },
+  "BIRD_80%": {
+    "file_name": "../../Training_Dataset/Divided/BIRD_train_80%.json"
+  },
+  "BIRD_100%": {
+    "file_name": "../../Training_Dataset/Divided/BIRD_train_100%.json"
+  },
   "C3_orig_train_1_hop": {
     "file_name": "../../Training_Dataset/C3_orig/my_ft_dataset.json"
   },
