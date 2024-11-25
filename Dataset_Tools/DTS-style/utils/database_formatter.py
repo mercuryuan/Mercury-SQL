@@ -4,20 +4,24 @@ import sqlite3
 def get_table_schema(db_uri: str, table_name: str) -> str:
     conn = sqlite3.connect(db_uri)
     cursor = conn.cursor()
-    cursor.execute(f"PRAGMA table_info({table_name});")
+
+    # Fetch table schema
+    cursor.execute(f"PRAGMA table_info(`{table_name}`);")
     columns = cursor.fetchall()
-    cursor.execute(f"PRAGMA foreign_key_list({table_name});")
+    cursor.execute(f"PRAGMA foreign_key_list(`{table_name}`);")
     foreign_keys = cursor.fetchall()
-    cursor.execute(f"PRAGMA index_list({table_name});")
+    cursor.execute(f"PRAGMA index_list(`{table_name}`);")
     primary_key_indices = cursor.fetchall()
     primary_key_columns = []
+
     for index_info in primary_key_indices:
         index_name = index_info[1]
-        cursor.execute(f"PRAGMA index_info({index_name});")
+        cursor.execute(f"PRAGMA index_info(`{index_name}`);")
         index_columns = cursor.fetchall()
         primary_key_columns.extend(column[2] for column in index_columns)
-    conn.close()
-    schema_str = f"CREATE TABLE {table_name} (\n"
+
+    # Construct CREATE TABLE statement
+    schema_str = f"CREATE TABLE `{table_name}` (\n"
     for column in columns:
         column_name = column[1]
         data_type = column[2]
@@ -30,12 +34,12 @@ def get_table_schema(db_uri: str, table_name: str) -> str:
 
         schema_str += ",\n"
     schema_str = schema_str.rstrip(",\n")
-    schema_str += "\n);"
+    schema_str += "\n);\n"
     return schema_str
 
 
 def get_table_schema_with_samples(
-    db_uri: str, table_name: str, sample_limit: int = 3
+        db_uri: str, table_name: str, sample_limit: int = 3
 ) -> str:
     conn = sqlite3.connect(db_uri)
     cursor = conn.cursor()
@@ -112,6 +116,7 @@ def get_number_of_columns(db_uri: str, given_tables: list[str]) -> list[int]:
     conn.close()
     return number_of_columns
 
+
 def get_all_column_names(db_uri: str, given_tables: list[str]) -> list[list[str]]:
     conn = sqlite3.connect(db_uri)
     cursor = conn.cursor()
@@ -127,6 +132,7 @@ def get_all_column_names(db_uri: str, given_tables: list[str]) -> list[list[str]
                 break
     conn.close()
     return column_names
+
 
 def get_all_primary_keys(db_uri: str, given_tables: list[str]) -> list[list[str]]:
     conn = sqlite3.connect(db_uri)
