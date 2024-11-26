@@ -6,7 +6,7 @@ import re
 import pandas as pd
 
 
-def extract_sample_with_sql_in_bird(json_file, sql_file, percentage):
+def extract_sample_with_sql_from_bird(json_file, sql_file, percentage):
     """
     抽取百分之几的JSON条目作为微调数据，同时引入对应的SQL查询作为output，并输出为新的JSON文件。
 
@@ -51,7 +51,7 @@ def extract_sample_with_sql_in_bird(json_file, sql_file, percentage):
     print(f"抽样完成，生成文件：{output_file}，包含 {len(formatted_data)} 条记录。")
 
 
-def extract_sample_with_sql_in_spider(csv_path, percentage):
+def extract_sample_with_sql_from_spider(csv_path, percentage):
     """
     从CSV文件中按比例抽取数据，并生成微调所需的JSON格式数据。
 
@@ -129,11 +129,11 @@ def main():
     if args.mode == "bird":
         if not args.json_file or not args.sql_file:
             raise ValueError("在 bird 模式下，必须提供 --json_file 和 --sql_file 参数")
-        extract_sample_with_sql_in_bird(args.json_file, args.sql_file, args.percentage)
+        extract_sample_with_sql_from_bird(args.json_file, args.sql_file, args.percentage)
     elif args.mode == "spider":
         if not args.spider_csv:
             raise ValueError("在 spider 模式下，必须提供 --spider_csv 参数")
-        extract_sample_with_sql_in_spider(args.spider_csv, args.percentage)
+        extract_sample_with_sql_from_spider(args.spider_csv, args.percentage)
 
 
 if __name__ == "__main__":
