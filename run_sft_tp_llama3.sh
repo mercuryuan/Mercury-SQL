@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # 进入 LLaMA-Factory 目录
 cd LLaMA-Factory
 

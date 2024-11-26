@@ -43,7 +43,7 @@ def extract_sample_with_sql_in_bird(json_file, sql_file, percentage):
     ]
 
     # 输出文件名
-    output_file = f"Training_Dataset/Divided/BIRD_train_{int(percentage)}%.json"
+    output_file = f"Training_Dataset/Divided/BIRD_train_{int(percentage)}.json"
     # 写入新JSON文件
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(formatted_data, f, ensure_ascii=False, indent=4)
@@ -100,7 +100,7 @@ def extract_sample_with_sql_in_spider(csv_path, percentage):
         output_data.append(entry)
 
     # 定义输出JSON路径
-    output_file = f"Training_Dataset/Divided/SPIDER_train_{int(percentage)}%.json"
+    output_file = f"Training_Dataset/Divided/SPIDER_train_{int(percentage)}.json"
 
     # 将结果保存为JSON文件
     with open(output_file, "w", encoding="utf-8") as f:
