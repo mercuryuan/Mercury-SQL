@@ -1,4 +1,10 @@
 {
+  "SPIDER_low_resource_EVAL": {
+    "file_name": "../../Training_Dataset/Divided/SPIDER_eval_full.json"
+  },
+  "BIRD_low_resource_EVAL": {
+    "file_name": "../../Training_Dataset/Divided/BIRD_eval_full.json"
+  },
   "SPIDER_20%": {
     "file_name": "../../Training_Dataset/Divided/SPIDER_train_20.json"
   },
