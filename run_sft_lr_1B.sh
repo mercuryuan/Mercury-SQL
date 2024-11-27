@@ -25,6 +25,17 @@ commands=(
     "llamafactory-cli train config/llama1B/lr_sft/bird/80.yaml"
     "llamafactory-cli train config/llama1B/lr_sft/spider/100.yaml"
     "llamafactory-cli train config/llama1B/lr_sft/bird/100.yaml"
+
+    "llamafactory-cli train config/llama3B/lr_sft/spider/20.yaml"
+    "llamafactory-cli train config/llama3B/lr_sft/bird/20.yaml"
+    "llamafactory-cli train config/llama3B/lr_sft/spider/40.yaml"
+    "llamafactory-cli train config/llama3B/lr_sft/bird/40.yaml"
+    "llamafactory-cli train config/llama3B/lr_sft/spider/60.yaml"
+    "llamafactory-cli train config/llama3B/lr_sft/bird/60.yaml"
+    "llamafactory-cli train config/llama3B/lr_sft/spider/80.yaml"
+    "llamafactory-cli train config/llama3B/lr_sft/bird/80.yaml"
+    "llamafactory-cli train config/llama3B/lr_sft/spider/100.yaml"
+    "llamafactory-cli train config/llama3B/lr_sft/bird/100.yaml"
 )
 
 # 定义可用的 GPU

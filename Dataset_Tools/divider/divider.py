@@ -14,6 +14,9 @@ def extract_sample_with_sql_from_bird(json_file, sql_file, percentage):
     :param sql_file: 对应SQL文件路径，每行SQL对应一个JSON条目的结果
     :param percentage: 抽样比例（0-100）
     """
+    import os
+    import random
+
     # 读取JSON文件
     with open(json_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -26,6 +29,9 @@ def extract_sample_with_sql_from_bird(json_file, sql_file, percentage):
     if len(data) != len(sql_queries):
         raise ValueError("JSON条目数与SQL查询数不一致，请检查输入文件！")
 
+    # 去掉SQL语句中的最后的 db_name 信息
+    cleaned_sql_queries = [sql.split('\t')[0].strip() for sql in sql_queries]
+
     # 计算抽样数量
     sample_size = max(1, int(len(data) * (percentage / 100)))
 
@@ -36,11 +42,14 @@ def extract_sample_with_sql_from_bird(json_file, sql_file, percentage):
     formatted_data = [
         {
             "instruction": "",
-            "input": f"-- question: {data[i]['question']} -- schema: {data[i]['schema']} {data[i]['external knowledge']}Generate the SQL after thinking step by step: \nSELECT ",
-            "output": sql_queries[i].strip()  # 对应的SQL查询，去掉行尾换行符
+            "input": f"-- question: {data[i]['question']} -- db_name: {data[i]['db_id']} -- schema: {data[i]['schema']} {data[i]['external knowledge']}Generate the SQL after thinking step by step: \nSELECT ",
+            "output": cleaned_sql_queries[i]  # 对应的SQL查询，去掉末尾的db_name
         }
         for i in sampled_indices
     ]
+
+    # 确保输出目录存在
+    os.makedirs("Training_Dataset/Divided", exist_ok=True)
 
     # 输出文件名
     output_file = f"Training_Dataset/Divided/BIRD_train_{int(percentage)}.json"

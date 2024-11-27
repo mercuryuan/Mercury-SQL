@@ -27,7 +27,7 @@ def generate_eval_dataset_from_bird(json_file, sql_file):
     formatted_data = [
         {
             "instruction": "",
-            "input": f"-- question: {entry['question']} -- schema: {entry['schema']} {entry['external knowledge']}Generate the SQL after thinking step by step: \nSELECT ",
+            "input": f"-- question: {entry['question']} -- db_name: {entry['db_id']} -- schema: {entry['schema']} {entry['external knowledge']}Generate the SQL after thinking step by step: \nSELECT ",
             "output": ""  # output置为空
         }
         for entry in data
