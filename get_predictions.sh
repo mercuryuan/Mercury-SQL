@@ -9,4 +9,6 @@
 #python Results/process_predictions.py Results/prediction/temperature
 #python Results/process_predictions.py Results/prediction/origin
 #python Results/process_predictions.py Results/prediction/2_stage/DTS
-python Results/process_predictions.py Results/prediction/lr_sft/bird
+
+# 对于BIRD
+python Results/process_predictions_for_bird.py Results/prediction/lr_sft/llama3B/bird

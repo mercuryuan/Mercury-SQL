@@ -15,15 +15,15 @@ fi
 
 # 定义训练命令
 commands=(
-    "llamafactory-cli train config/llama3B/lr_inf/spider/20.yaml"
-    "llamafactory-cli train config/llama3B/lr_inf/spider/40.yaml"
-    "llamafactory-cli train config/llama3B/lr_inf/spider/60.yaml"
-    "llamafactory-cli train config/llama3B/lr_inf/spider/80.yaml"
-    "llamafactory-cli train config/llama3B/lr_inf/spider/100.yaml"
-    "llamafactory-cli train config/llama3B/lr_inf/bird/20.yaml"
-    "llamafactory-cli train config/llama3B/lr_inf/bird/40.yaml"
-    "llamafactory-cli train config/llama3B/lr_inf/bird/60.yaml"
-    "llamafactory-cli train config/llama3B/lr_inf/bird/80.yaml"
+#    "llamafactory-cli train config/llama3B/lr_inf/spider/20.yaml"
+#    "llamafactory-cli train config/llama3B/lr_inf/spider/40.yaml"
+#    "llamafactory-cli train config/llama3B/lr_inf/spider/60.yaml"
+#    "llamafactory-cli train config/llama3B/lr_inf/spider/80.yaml"
+#    "llamafactory-cli train config/llama3B/lr_inf/spider/100.yaml"
+#    "llamafactory-cli train config/llama3B/lr_inf/bird/20.yaml"
+#    "llamafactory-cli train config/llama3B/lr_inf/bird/40.yaml"
+#    "llamafactory-cli train config/llama3B/lr_inf/bird/60.yaml"
+#    "llamafactory-cli train config/llama3B/lr_inf/bird/80.yaml"
     "llamafactory-cli train config/llama3B/lr_inf/bird/100.yaml"
 )
 
