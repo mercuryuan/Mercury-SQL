@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #                                               !!!!  设置要处理的母文件夹路径  !!!!!
-prediction_path=Results/prediction/lr_sft/llama3B/spider
+prediction_path=Results/prediction/lr_sft/llama1B/spider
+#prediction_path=Results/prediction/lr_sft/llama3B/spider
 #prediction_path=Results/prediction/2_stage/DTS-8B
 #prediction_path=Results/prediction/2_stage/DTS
 

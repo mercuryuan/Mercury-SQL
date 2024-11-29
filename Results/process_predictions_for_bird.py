@@ -42,7 +42,7 @@ def process_all_subfolders(base_dir):
     for root, dirs, files in os.walk(base_dir):
         for subdir in dirs:
             input_file = os.path.join(base_dir, subdir, "generated_predictions.jsonl")
-            output_file = os.path.join(base_dir, subdir, "dev_predict.json")
+            output_file = os.path.join(base_dir, subdir, "predict_dev.json")
 
             # 如果文件存在，执行提取和转换操作
             if os.path.isfile(input_file):

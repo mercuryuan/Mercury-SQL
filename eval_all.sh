@@ -11,8 +11,10 @@ python Evaluation/evaluation.py   \
  --etype $eval_type \
  --db $db \
  --table $table\
- --pred Results/prediction/temperature/06/predict.txt
+ --pred Results/prediction/lr_sft/llama3B/spider/20/predict.txt
 
+
+# --pred Results/prediction/temperature/06/predict.txt
 # --pred Results/prediction/tp_llama/C3o_lr5/predict.txt
 # --pred Results/prediction/tp_llama/C3o_lr7/predict.txt
 # --pred Results/prediction/tp_llama/C3/predict.txt
