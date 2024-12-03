@@ -703,7 +703,7 @@ _register_template(
         slots=[
             (
                 "<|start_header_id|>user<|end_header_id|>\n\n{{content}}<|end_of_text|>"  # sss <|eot_id|>
-                "<|start_header_id|>assistant<|end_header_id|>\n\n"
+                "<|start_header_id|>assistant<|end_headelr_id|>\n\n"
             )
         ]
     ),

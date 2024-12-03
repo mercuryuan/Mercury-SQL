@@ -9,7 +9,12 @@ mode_gt='gt'
 mode_predict='gpt'
 
 # 手动配置
-predicted_sql_path_kg=Results/prediction/lr_sft/llama3B/bird/100/
+#predicted_sql_path_kg=Results/prediction/lr_sft/llama1B/bird/100/
+#predicted_sql_path_kg=Results/prediction/lr_sft/llama1B/bird/80/
+#predicted_sql_path_kg=Results/prediction/lr_sft/llama1B/bird/60/
+#predicted_sql_path_kg=Results/prediction/lr_sft/llama1B/bird/40/
+predicted_sql_path_kg=Results/prediction/lr_sft/llama1B/bird/20/
+#predicted_sql_path_kg=Results/prediction/lr_sft/llama3B/bird/100/
 #predicted_sql_path_kg='Results/prediction/lr_sft/llama3B/bird/20/'
 #predicted_sql_path_kg='Results/prediction/lr_sft/llama3B/bird/40/'
 #predicted_sql_path_kg=Results/prediction/lr_sft/llama3B/bird/60/

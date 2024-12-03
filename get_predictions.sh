@@ -11,4 +11,5 @@
 #python Results/process_predictions.py Results/prediction/2_stage/DTS
 
 # 对于BIRD
-python Results/process_predictions_for_bird.py Results/prediction/lr_sft/llama3B/bird
+python Results/process_predictions_for_bird.py Results/prediction/lr_sft/llama1B/bird
+#python Results/process_predictions_for_bird.py Results/prediction/lr_sft/llama3B/bird

@@ -16,22 +16,22 @@ fi
 # 定义训练命令
 commands=(
     "llamafactory-cli train config/llama1B/lr_inf/spider/0.yaml"
-    "llamafactory-cli train config/llama1B/lr_inf/spider/20.yaml"
-    "llamafactory-cli train config/llama1B/lr_inf/spider/40.yaml"
-    "llamafactory-cli train config/llama1B/lr_inf/spider/60.yaml"
-    "llamafactory-cli train config/llama1B/lr_inf/spider/80.yaml"
-    "llamafactory-cli train config/llama1B/lr_inf/spider/100.yaml"
+#    "llamafactory-cli train config/llama1B/lr_inf/spider/20.yaml"
+#    "llamafactory-cli train config/llama1B/lr_inf/spider/40.yaml"
+#    "llamafactory-cli train config/llama1B/lr_inf/spider/60.yaml"
+#    "llamafactory-cli train config/llama1B/lr_inf/spider/80.yaml"
+#    "llamafactory-cli train config/llama1B/lr_inf/spider/100.yaml"
     "llamafactory-cli train config/llama1B/lr_inf/bird/0.yaml"
-    "llamafactory-cli train config/llama1B/lr_inf/bird/20.yaml"
-    "llamafactory-cli train config/llama1B/lr_inf/bird/40.yaml"
-    "llamafactory-cli train config/llama1B/lr_inf/bird/60.yaml"
-    "llamafactory-cli train config/llama1B/lr_inf/bird/80.yaml"
-    "llamafactory-cli train config/llama1B/lr_inf/bird/100.yaml"
+#    "llamafactory-cli train config/llama1B/lr_inf/bird/20.yaml"
+#    "llamafactory-cli train config/llama1B/lr_inf/bird/40.yaml"
+#    "llamafactory-cli train config/llama1B/lr_inf/bird/60.yaml"
+#    "llamafactory-cli train config/llama1B/lr_inf/bird/80.yaml"
+#    "llamafactory-cli train config/llama1B/lr_inf/bird/100.yaml"
 )
 
 # 定义可用的 GPU
 gpu_count=2  # 可用 GPU 数量
-gpu_assignments=(4 3)  # GPU 0 和 GPU 1
+gpu_assignments=(2 3)  # GPU 0 和 GPU 1
 
 # 创建一个空数组来保存当前正在执行的任务的 PID
 declare -a running_jobs

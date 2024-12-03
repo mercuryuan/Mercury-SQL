@@ -2,12 +2,12 @@
 model_name_or_path: /home/models/Llama-3.2-1B
 
 ### 手动配置区
-template: llama3 # 重要！模板
+template: default # 重要！模板
 output_dir: ../Results/prediction/lr_sft/llama1B/bird/0
 eval_dataset: BIRD_low_resource_EVAL
 
 # 统一参数区
-#cutoff_len: 2048
+cutoff_len: 3000
 dataset_dir: data
 do_predict: true
 flash_attn: auto
