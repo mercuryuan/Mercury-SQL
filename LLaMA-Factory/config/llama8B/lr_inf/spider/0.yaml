@@ -3,7 +3,7 @@ model_name_or_path: /home/models/llama3-8b
 
 ### 手动配置区
 template: llama3 # 重要！模板
-output_dir: ../Results/prediction/lr_sft/llama3B/spider/0
+output_dir: ../Results/prediction/lr_sft/llama8B/spider/0
 eval_dataset: SPIDER_low_resource_EVAL
 
 # 统一参数区

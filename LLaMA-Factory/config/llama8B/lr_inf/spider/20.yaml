@@ -3,8 +3,8 @@ model_name_or_path: /home/models/llama3-8b
 
 ### 手动配置区
 template: llama3 # 重要！模板
-adapter_name_or_path: /home/wma/Mercury-SQL/Models/llama3B/lr_sft/SPIDER_20/checkpoint-400
-output_dir: ../Results/prediction/lr_sft/llama3B/spider/20
+adapter_name_or_path: /home/wma/Mercury-SQL/Models/llama8B/lr_sft/SPIDER_20/checkpoint-400
+output_dir: ../Results/prediction/lr_sft/llama8B/spider/20
 eval_dataset: SPIDER_low_resource_EVAL
 
 # 统一参数区
